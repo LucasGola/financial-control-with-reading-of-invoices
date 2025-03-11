@@ -1,0 +1,298 @@
+{
+	"info": {
+		"_postman_id": "92d6ae26-a4fd-403e-86e4-39210daaa28c",
+		"name": "inventory-flow-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42474817"
+	},
+	"item": [
+		{
+			"name": "API",
+			"item": [
+				{
+					"name": "InFlow",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"datetime\": \"2023-11-15T10:00:00Z\",\r\n  \"item\": \"Test Item\",\r\n  \"description\": \"Test Description\",\r\n  \"quantity\": 10,\r\n  \"total_value\": 1000,\r\n  \"unit_value\": 100\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/inflow",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"inflow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OutFlow",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"datetime\": \"2023-11-15T10:00:00Z\",\r\n  \"item\": \"Test Item\",\r\n  \"description\": \"Test Description\",\r\n  \"quantity\": 5,\r\n  \"total_price\": 600,\r\n  \"unit_price\": 120\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/outflow",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"outflow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OutFlow Report",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/outflow-report?startDate=2023-10-15T10:00:00Z&endDate=2023-12-15T10:00:00Z",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"outflow-report"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2023-10-15T10:00:00Z"
+								},
+								{
+									"key": "endDate",
+									"value": "2023-12-15T10:00:00Z"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "InFlow Report",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/inflow-report?startDate=2023-10-15T10:00:00Z&endDate=2023-12-15T10:00:00Z",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"inflow-report"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2023-10-15T10:00:00Z"
+								},
+								{
+									"key": "endDate",
+									"value": "2023-12-15T10:00:00Z"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "InFlow Data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/inflow-data?startDate=2023-10-15T10:00:00Z&endDate=2023-12-15T10:00:00Z",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"inflow-data"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2023-10-15T10:00:00Z"
+								},
+								{
+									"key": "endDate",
+									"value": "2023-12-15T10:00:00Z"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OutFlow Data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/outflow-data?startDate=2023-10-15T10:00:00Z&endDate=2023-12-15T10:00:00Z",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"outflow-data"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2023-10-15T10:00:00Z"
+								},
+								{
+									"key": "endDate",
+									"value": "2023-12-15T10:00:00Z"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Relationship Report",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/relationship-report?startDate=2023-10-15T10:00:00Z&endDate=2023-12-15T10:00:00Z",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"relationship-report"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2023-10-15T10:00:00Z"
+								},
+								{
+									"key": "endDate",
+									"value": "2023-12-15T10:00:00Z"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Relationship Data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/relationship-data?startDate=2023-10-15T10:00:00Z&endDate=2023-12-15T10:00:00Z",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"relationship-data"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2023-10-15T10:00:00Z"
+								},
+								{
+									"key": "endDate",
+									"value": "2023-12-15T10:00:00Z"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "https://www.nfce.fazenda.sp.gov.br/NFCeConsultaPublica/Paginas/ConsultaQRCode.aspx?p=35250200063960001504655050000016881048579176|2|1|1|EFBA4B2A2B28486EE9817AE3125C6B8ECEF8CD05",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.nfce.fazenda.sp.gov.br/NFCeConsultaPublica/Paginas/ConsultaQRCode.aspx?p=35250200063960001504655050000016881048579176|2|1|1|EFBA4B2A2B28486EE9817AE3125C6B8ECEF8CD05",
+					"protocol": "https",
+					"host": [
+						"www",
+						"nfce",
+						"fazenda",
+						"sp",
+						"gov",
+						"br"
+					],
+					"path": [
+						"NFCeConsultaPublica",
+						"Paginas",
+						"ConsultaQRCode.aspx"
+					],
+					"query": [
+						{
+							"key": "p",
+							"value": "35250200063960001504655050000016881048579176|2|1|1|EFBA4B2A2B28486EE9817AE3125C6B8ECEF8CD05"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
