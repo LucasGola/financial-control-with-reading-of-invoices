@@ -4,6 +4,22 @@ const FlowService = require("../services/flowService");
 const router = express.Router();
 const flowService = new FlowService();
 
+router.post("/api/nfe-data", async (req, res) => {
+  const { qrCodeUrl } = req.body;
+
+  if (!qrCodeUrl) {
+    return res.status(400).json({ error: "QR Code URL não foi fornecida" });
+  }
+
+  try {
+    const nfeData = await processNfeData(qrCodeUrl);
+    res.json(nfeData);
+  } catch (error) {
+    console.error("Erro ao processar a URL:", error);
+    res.status(500).json({ error: "Erro ao processar a URL" });
+  }
+});
+
 // POST route to insert inFlow data
 router.post("/inflow", async (req, res) => {
   try {
